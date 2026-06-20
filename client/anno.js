@@ -405,7 +405,7 @@ function renderAnnotPanel() {
   for (const a of paraAnnots) {
     const isClaude = a.author === 'Claude';
     const colorClass = isClaude ? 'amber' : 'jade';
-    const authorName = isClaude ? 'Claude' : 'Butter';
+    const authorName = isClaude ? 'Claude' : 'Reader';
     const dateStr = a.created_at ? a.created_at.substring(0, 10) : '';
     const canDelete = !isClaude;
     const delBtn = canDelete
@@ -832,7 +832,7 @@ function renderDetail() {
       </div>
       <div class="progress-row">
         <div class="progress-row-header">
-          <span class="progress-label">Butter</span>
+          <span class="progress-label">Reader</span>
           <span class="progress-pct jade">p.${currentPage} · ${myPct}%</span>
         </div>
         <div class="bar-gauge"><div class="bar-gauge-fill jade" style="width:${myPct}%"></div></div>
@@ -1085,7 +1085,7 @@ function renderAnnotationsOverview() {
             const isClaude = a.author === 'Claude';
             const cls = isClaude ? 'claude' : 'user';
             const colorCls = isClaude ? 'amber' : 'jade';
-            const authorName = isClaude ? 'Claude' : 'Butter';
+            const authorName = isClaude ? 'Claude' : 'Reader';
             const text = a.type === 'highlight'
               ? (a.text ? `<span class="annot-row-highlight ${isClaude ? 'hl-claude' : ''}">${esc(a.text)}</span>` : '<em>highlight</em>')
               : esc(a.text);

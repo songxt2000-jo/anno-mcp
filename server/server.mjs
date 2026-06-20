@@ -160,7 +160,7 @@ function createMcp() {
 
   server.tool("read_annotations", "读取批注", {
     book_id: z.string().describe("书籍ID"),
-    author: z.string().optional().describe("筛选作者: 乖乖 或 Claude"),
+    author: z.string().optional().describe("筛选作者名"),
     context_size: z.number().optional().describe("上下文段落数，默认3"),
   }, async ({ book_id, author, context_size }) => {
     const book = loadBook(book_id);
@@ -459,7 +459,7 @@ app.post("/api/books/:id/annotations", async (req, res) => {
         paragraph_id,
         type: type || "highlight",
         text: text || "",
-        author: req.body.author || "乖乖",
+        author: req.body.author || "reader",
         reply_to: null,
         created_at: new Date().toISOString(),
       };
