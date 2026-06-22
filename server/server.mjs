@@ -779,7 +779,7 @@ app.post("/mcp/messages", async (req, res) => {
 
 app.get("/health", (req, res) => res.json({ status: "ok", service: "anno" }));
 
-const CLIENT_DIR = join(__dirname, "../client");
+const CLIENT_DIR = join(__dirname, "client");
 if (existsSync(CLIENT_DIR)) {
   app.use(express.static(CLIENT_DIR));
 }
