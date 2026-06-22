@@ -784,4 +784,5 @@ if (existsSync(CLIENT_DIR)) {
   app.use(express.static(CLIENT_DIR));
 }
 
-app.listen(PORT, '127.0.0.1', () => console.log(`Anno MCP server on 127.0.0.1:${PORT}`));
+const HOST = process.env.HOST || '0.0.0.0';
+app.listen(PORT, HOST, () => console.log(`Anno MCP server on ${HOST}:${PORT}`));
