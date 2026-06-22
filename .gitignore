@@ -1,0 +1,5 @@
+data/
+server/data/
+server/uploads/
+server/node_modules/
+node_modules/
